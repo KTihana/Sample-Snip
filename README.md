@@ -1,4 +1,4 @@
-# Simple Snip
+# Sample Snip
 
 A free browser extension that records a short sound from your selected tab. Press **Record sample**, then **Stop**, preview the result, and download **WAV** or **MP3**. Each sample can be up to 60 seconds long.
 
@@ -18,7 +18,7 @@ Light is the default theme. Use the sun/moon button beside the pin icon to switc
 1. Choose **Code → Download ZIP** on GitHub and extract it.
 2. Open `chrome://extensions` or `edge://extensions`.
 3. Enable **Developer mode**, click **Load unpacked**, and select the **extension** folder.
-4. Play audio in a tab, open Simple Snip from the toolbar, and record.
+4. Play audio in a tab, open Sample Snip from the toolbar, and record.
 
 No build tools or account are needed. Recording continues if the popup closes; reopen it to Stop, or use the pin icon.
 
@@ -32,7 +32,7 @@ python3 scripts/package.py
 
 On Windows, use `py -3 scripts/package.py` if `python3` is unavailable.
 
-Open `about:debugging`, choose **This Firefox → Load Temporary Add-on**, and select `dist/simple-snip-firefox/manifest.json`. This installation lasts until Firefox restarts.
+Open `about:debugging`, choose **This Firefox → Load Temporary Add-on**, and select `dist/sample-snip-firefox/manifest.json`. This installation lasts until Firefox restarts.
 
 Play an HTML audio/video player, then open the extension toolbar action before recording. Open it again on each newly selected page to grant access. The pin icon opens Firefox’s sidebar.
 
