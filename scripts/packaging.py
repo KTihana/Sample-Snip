@@ -10,7 +10,7 @@ DIST = ROOT / "dist"
 VERSION = json.loads((ROOT / "package.json").read_text())["version"]
 PUBLIC_FOLDERS = ("extension", "docs", "tests", "scripts", ".github")
 PUBLIC_FILES = (
-    ".editorconfig", ".gitignore", ".prettierignore", ".prettierrc.json",
+    ".editorconfig", ".gitattributes", ".gitignore", ".prettierignore", ".prettierrc.json",
     "eslint.config.js", "LICENSE", "README.md", "package.json", "package-lock.json",
 )
 
