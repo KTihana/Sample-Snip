@@ -9,7 +9,7 @@ export function createClip(chunks, sampleRate) {
     wav,
     clip: {
       url: URL.createObjectURL(new Blob([wav], { type: "audio/wav" })),
-      filename: `simple-snip-${timestamp}.wav`,
+      filename: `sample-snip-${timestamp}.wav`,
       duration: frames / sampleRate,
       sampleRate,
     },
