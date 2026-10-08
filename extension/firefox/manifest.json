@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Simple Snip \u2014 Firefox beta",
-  "version": "0.3.2",
+  "name": "Sample Snip \u2014 Firefox beta",
+  "version": "0.3.3",
   "description": "Sample audio from supported audio/video players in the selected page. Preview and download WAV or MP3 locally.",
   "permissions": ["activeTab"],
   "background": {
@@ -10,7 +10,7 @@
   },
   "browser_action": {
     "default_popup": "ui/popup.html",
-    "default_title": "Simple Snip"
+    "default_title": "Sample Snip"
   },
   "browser_specific_settings": {
     "gecko": {
@@ -30,7 +30,7 @@
   },
   "sidebar_action": {
     "default_panel": "ui/popup.html?panel=1",
-    "default_title": "Simple Snip",
+    "default_title": "Sample Snip",
     "default_icon": "icons/icon-32.png"
   },
   "web_accessible_resources": ["firefox/page-recorder.js"]
