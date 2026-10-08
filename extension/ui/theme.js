@@ -1,5 +1,5 @@
 (() => {
-  const key = "simple-snip-theme";
+  const key = "sample-snip-theme";
   function apply(theme) {
     document.documentElement.dataset.theme = theme === "dark" ? "dark" : "light";
     const button = document.getElementById("theme");
