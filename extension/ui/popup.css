@@ -1,15 +1,45 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --bg: #faf9fe;
+  --surface: #f0edf6;
+  --border: #dfdbe9;
+  --text: #252139;
+  --muted: #696477;
+  --accent: #7252c9;
+  --accent-text: #ffffff;
+  --mark-bg: #eee7fc;
+  --secondary: #efecf4;
+  --secondary-accent: #6545ad;
+  --disabled: #918b9e;
+  --red: #c93658;
+  --red-text: #ffffff;
+  --success: #267954;
+  --error: #b52949;
+  --divider: #ddd8e8;
+  --hover-brightness: 0.96;
+  color: var(--text);
+  background: var(--bg);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
   --bg: #14141c;
   --surface: #20202b;
   --border: #30303e;
   --text: #f5f3ff;
   --muted: #a6a7ba;
   --accent: #c9bbff;
+  --accent-text: #231c38;
+  --mark-bg: #292536;
+  --secondary: #24242f;
+  --secondary-accent: #e5ddff;
+  --disabled: #777486;
   --red: #ff8599;
-  color: var(--text);
-  background: var(--bg);
+  --red-text: #351521;
+  --success: #a9e0c6;
+  --error: #ff9da6;
+  --divider: #353442;
+  --hover-brightness: 1.1;
 }
 * {
   box-sizing: border-box;
@@ -36,7 +66,7 @@ header {
   width: 38px;
   height: 38px;
   border-radius: 12px;
-  background: #292536;
+  background: var(--mark-bg);
 }
 .mark i {
   width: 3px;
@@ -87,7 +117,7 @@ body[data-state="recording"] .source {
   color: var(--red);
 }
 body[data-state="ready"] .source {
-  color: #a9e0c6;
+  color: var(--success);
 }
 .timer {
   font-size: 48px;
@@ -114,7 +144,7 @@ body[data-state="ready"] .source {
   content: "";
   height: 1px;
   width: 100%;
-  background: #353442;
+  background: var(--divider);
 }
 .meter span {
   display: none;
@@ -163,22 +193,22 @@ button,
 #record {
   flex: 1;
   background: var(--accent);
-  color: #231c38;
+  color: var(--accent-text);
 }
 #stop {
   width: 100px;
 }
 .secondary {
-  background: #24242f;
+  background: var(--secondary);
   color: var(--text);
 }
 button:disabled {
-  color: #777486;
+  color: var(--disabled);
   cursor: default;
 }
 #record:disabled {
-  background: #24242f;
-  color: #777486;
+  background: var(--secondary);
+  color: var(--disabled);
 }
 #stop:disabled .stop-icon {
   display: none;
@@ -200,7 +230,7 @@ body[data-state="recording"] #stop {
   flex: 1;
   width: auto;
   background: var(--red);
-  color: #351521;
+  color: var(--red-text);
 }
 body[data-state="recording"] #record {
   flex: none;
@@ -242,7 +272,7 @@ body:has(#clip:not([hidden])) .record-help {
   gap: 10px;
   padding: 10px 12px;
   border-radius: 10px;
-  background: #24242f;
+  background: var(--secondary);
   height: 42px;
   margin-bottom: 14px;
 }
@@ -253,7 +283,7 @@ body:has(#clip:not([hidden])) .record-help {
   width: 22px;
   height: 22px;
   background: var(--accent);
-  color: #231c38;
+  color: var(--accent-text);
   font-size: 10px;
   padding: 0;
   flex-shrink: 0;
@@ -280,12 +310,12 @@ body:has(#clip:not([hidden])) .record-help {
   flex: 1;
   min-height: 46px;
   background: var(--accent);
-  color: #231c38;
+  color: var(--accent-text);
   font-size: 12px;
 }
 .download.secondary {
-  background: #292536;
-  color: #e5ddff;
+  background: var(--mark-bg);
+  color: var(--secondary-accent);
 }
 .download[aria-disabled="true"] {
   opacity: 0.5;
@@ -310,12 +340,12 @@ body:has(#clip:not([hidden])) .record-help {
   color: var(--accent);
 }
 #clear {
-  color: #b7b4c7;
+  color: var(--muted);
   font-weight: 400;
 }
 #error,
 #mp3-error {
-  color: #ff9da6;
+  color: var(--error);
   font-size: 12px;
   line-height: 1.6;
 }
@@ -338,14 +368,13 @@ input:focus-visible {
 }
 button:not(:disabled):hover,
 .download:not([aria-disabled="true"]):hover {
-  filter: brightness(1.1);
+  filter: brightness(var(--hover-brightness));
 }
 [hidden] {
   display: none !important;
 }
 
-.pin-button {
-  margin-left: auto;
+.header-button {
   width: 32px;
   height: 32px;
   display: grid;
@@ -354,15 +383,26 @@ button:not(:disabled):hover,
   background: transparent;
   color: var(--muted);
   border-radius: 8px;
+  flex-shrink: 0;
 }
-.pin-button:hover {
+.header-button:hover {
   background: var(--surface);
   color: var(--accent);
 }
 .pin-button[aria-pressed="true"] {
   color: var(--accent);
-  background: #292536;
+  background: var(--mark-bg);
   opacity: 1;
+}
+.theme-button {
+  margin-left: auto;
+}
+.theme-sun,
+:root[data-theme="dark"] .theme-moon {
+  display: none;
+}
+:root[data-theme="dark"] .theme-sun {
+  display: block;
 }
 body.pinned-panel {
   width: 100%;
@@ -370,10 +410,19 @@ body.pinned-panel {
   min-height: 100vh;
 }
 .pinned-panel header {
-  gap: 10px;
+  gap: 8px;
 }
 .pinned-panel h1 {
-  font-size: 17px;
+  font-size: 16px;
+}
+.pinned-panel .mark {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.pinned-panel .header-button {
+  width: 28px;
+  height: 28px;
 }
 .pinned-panel .actions {
   gap: 8px;
