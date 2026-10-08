@@ -9,8 +9,8 @@ Light is the default theme. Use the sun/moon button beside the pin icon to switc
 ## Screenshots
 
 <p>
-  <img src="docs/screenshots/light-idle.jpg" alt="Light mode, ready to record" width="320" />
-  <img src="docs/screenshots/dark-recording.jpg" alt="Dark mode, recording" width="320" />
+  <img src="docs/screenshots/light-mode.jpg" alt="Light mode, ready to record" width="320" />
+  <img src="docs/screenshots/dark-mode.jpg" alt="Dark mode, recording" width="320" />
 </p>
 
 ## Chrome or Edge
