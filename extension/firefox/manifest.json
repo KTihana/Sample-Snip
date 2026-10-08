@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Simple Snip \u2014 Firefox beta",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Sample audio from supported audio/video players in the selected page. Preview and download WAV or MP3 locally.",
   "permissions": ["activeTab"],
   "background": {
