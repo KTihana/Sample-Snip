@@ -8,13 +8,10 @@ Light is the default theme. Use the sun/moon button beside the pin icon to switc
 
 ## Screenshots
 
-The recorder pinned beside a webpage in Firefox:
-
-![Simple Snip recorder pinned in the Firefox sidebar](docs/screenshots/recorder-light.png)
-
-A finished sample with preview, WAV and MP3 downloads, and Discard:
-
-![Simple Snip with a finished sample and WAV and MP3 downloads](docs/screenshots/sample-ready-light.png)
+<p>
+  <img src="docs/screenshots/light-idle.jpg" alt="Light mode, ready to record" width="320" />
+  <img src="docs/screenshots/dark-recording.jpg" alt="Dark mode, recording" width="320" />
+</p>
 
 ## Chrome or Edge
 
