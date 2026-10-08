@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Simple Snip",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Record short audio samples from a browser tab, preview them, and download WAV or MP3 files.",
   "minimum_chrome_version": "116",
   "permissions": ["tabCapture", "offscreen", "activeTab", "sidePanel"],
