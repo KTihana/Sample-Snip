@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Snip</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body data-state="idle">
+    <header>
+      <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <div><h1>Simple Snip</h1></div>
+      <button
+        id="pin"
+        class="pin-button"
+        title="Pin recorder to side panel"
+        aria-label="Pin recorder to side panel"
+        aria-pressed="false"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m9 3 6 0-1 6 4 4v2H6v-2l4-4-1-6Z" />
+          <path d="M12 15v6" />
+        </svg>
+      </button>
+    </header>
+    <main>
+      <div class="capture-display">
+        <div class="source">
+          <span class="dot" id="dot"></span><span id="status" role="status">Ready to record</span>
+        </div>
+        <div class="timer" id="timer">00:00.0</div>
+        <p class="limit">Up to 60 seconds per sample</p>
+        <div id="meter" class="meter" aria-hidden="true"></div>
+      </div>
+      <div class="actions">
+        <button id="record">
+          <span class="record-icon" aria-hidden="true"></span>Record sample</button
+        ><button id="stop" class="secondary" disabled>
+          <span class="stop-icon" aria-hidden="true"></span><span id="stop-label">Stop</span>
+        </button>
+      </div>
+      <p class="record-help" id="record-help">
+        Play audio in your tab, then press Record.<br />Preview and download your sample here.
+      </p>
+      <p class="browser-note" id="browser-note" hidden>
+        Firefox beta records supported audio/video players on this page. Some players and other tab
+        sounds cannot be captured.
+      </p>
+      <p id="error" role="alert" hidden></p>
+      <section id="clip" hidden>
+        <div class="clip-header">
+          <h2>Your sample</h2>
+          <span id="details"></span>
+        </div>
+        <audio id="preview" preload="metadata" hidden></audio>
+        <div class="player">
+          <button id="play" aria-label="Play sample"><span aria-hidden="true">▶</span></button
+          ><input
+            id="seek"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0"
+            aria-label="Sample playback position"
+          /><span id="play-time">0:00</span>
+        </div>
+        <div class="downloads">
+          <a id="download" class="download">Download WAV</a
+          ><a id="download-mp3" class="download secondary" aria-disabled="true">Preparing MP3…</a>
+        </div>
+        <p class="format-hint">WAV: full quality · MP3: 320 kbps</p>
+        <p id="mp3-error" role="alert" hidden></p>
+        <div class="sample-actions"><button id="clear" class="text-button">Discard</button></div>
+      </section>
+    </main>
+    <footer>Saved locally · Nothing uploaded</footer>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
