@@ -29,7 +29,7 @@ def build(browser):
     if manifest["version"] != VERSION:
         raise ValueError(f"{browser} manifest version does not match the Chrome manifest")
     DIST.mkdir(exist_ok=True)
-    target = DIST / f"simple-snip-{browser}"
+    target = DIST / f"sample-snip-{browser}"
     with tempfile.TemporaryDirectory(dir=DIST) as temporary:
         staging = Path(temporary)
         for folder in ("audio", "shared", "ui", "icons", "vendor", browser):
@@ -42,7 +42,7 @@ def build(browser):
         if target.exists():
             shutil.rmtree(target)
         shutil.move(str(staging), target)
-    archive = DIST / f"simple-snip-{browser}-{VERSION}.zip"
+    archive = DIST / f"sample-snip-{browser}-{VERSION}.zip"
     write_zip(archive, target)
     return archive
 
