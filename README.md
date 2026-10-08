@@ -4,6 +4,8 @@ A free browser extension that records a short sound from your selected tab. Pres
 
 The pin icon keeps the recorder open in the browser’s side panel while you use the webpage. **Discard** clears your sample. Audio stays on your device.
 
+Light is the default theme. Use the sun/moon button beside the pin icon to switch between light and dark; your choice is remembered for the popup and side panel.
+
 ## Screenshots
 
 The recorder pinned beside a webpage in Firefox:
